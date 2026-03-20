@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TitleBox = ({heading}) => {
+const TitleBox = ({heading, title, link = "#"}) => {
   return (
-    <div id='title' className='title py-10  '>
-         <span>{heading} </span>
+    <div className='title'>
+         <a href={link} id={title} className='cursor-pointer heading block transition-colors'>{heading}</a>
     </div>
   )
 }

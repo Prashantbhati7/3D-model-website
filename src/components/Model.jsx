@@ -69,9 +69,9 @@ const Model = () => {
     
     
     const material = useRef({
-        uMatcap1: { value: mat19 },
+        uMatcap1: { value: mat2 },
         uMatcap2: { value: mat2 },
-        uProgress: { value: 0.8 }
+        uProgress: { value: 1.0}
     })
     // textures.normalMap.flipY = false ;
     //  texture.normalMap.flipY = false ;
@@ -151,6 +151,131 @@ const Model = () => {
       
    },[])
 
+  //  useEffect(()=>{
+  //   document.querySelector('#hire').addEventListener('mouseenter',()=>{
+  //     // console.log(e);
+  //     material.current.uMatcap1.value = mat19;
+  //     gsap.to(material.current.uProgress,{value:0.0,duration:1})
+  //     })
+  //     document.querySelector('#hire').addEventListener('mouseleave',()=>{
+  //       gsap.to(material.current.uProgress,{value:1.0,duration:1})
+  //       //material.current.uMatcap1.value = mat2;
+  //     })
+  //     document.querySelector("#becomewalker").addEventListener('mouseenter',()=>{
+  //       material.current.uMatcap1.value = mat8;
+  //       gsap.to(material.current.uProgress,{value:0.0,duration:2})
+  //     })
+  //     document.querySelector("#becomewalker").addEventListener('mouseleave',()=>{
+  //       gsap.to(material.current.uProgress,{value:1.0,duration:2})
+  //       //material.current.uMatcap1.value = mat2;
+  //     })
+  //     document.querySelector('#train').addEventListener('mouseenter',()=>{
+  //       material.current.uMatcap1.value = mat18;
+  //       gsap.to(material.current.uProgress,{value:0.0,duration:2})
+  //     })
+  //     document.querySelector('#train').addEventListener('mouseleave',()=>{
+  //       gsap.to(material.current.uProgress,{value:1.0,duration:2})
+
+  //     })
+  //   },[])
+    useEffect(() => {
+        document.querySelector(`#hire`).addEventListener("mouseenter", () => {
+            material.current.uMatcap1.value = mat19
+           // back.style.opacity = 1;
+            const tl = gsap.timeline({
+              onComplete: () => {
+                material.current.uMatcap2.value = material.current.uMatcap1.value
+                material.current.uProgress.value = 1.0
+              }
+            });
+
+            tl.to(material.current.uProgress, {
+              value: 0.0,
+              duration: 0.3,
+            }, 0) //  start at same time
+        })
+
+        document.querySelector(`#becomewalker`).addEventListener("mouseenter", () => {
+
+            material.current.uMatcap1.value = mat8
+            
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.3,
+                onComplete: () => {
+                    material.current.uMatcap2.value = material.current.uMatcap1.value
+                    material.current.uProgress.value = 1.0
+                }
+            })
+        })
+        document.querySelector(`#train`).addEventListener("mouseenter", () => {
+
+            material.current.uMatcap1.value = mat9
+            
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.3,
+                onComplete: () => {
+                    material.current.uMatcap2.value = material.current.uMatcap1.value
+                    material.current.uProgress.value = 1.0
+                }
+            })
+        })
+        document.querySelector(`#petsitting`).addEventListener("mouseenter", () => {
+
+            material.current.uMatcap1.value = mat12
+            
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.3,
+                onComplete: () => {
+                    material.current.uMatcap2.value = material.current.uMatcap1.value
+                    material.current.uProgress.value = 1.0
+                }
+            })
+        })
+        document.querySelector(`#browse`).addEventListener("mouseenter", () => {
+
+            material.current.uMatcap1.value = mat10
+            
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.3,
+                onComplete: () => {
+                    material.current.uMatcap2.value = material.current.uMatcap1.value
+                    material.current.uProgress.value = 1.0
+                }
+            })
+        })
+        document.querySelector(`#become-Petsitter`).addEventListener("mouseenter", () => {
+
+            material.current.uMatcap1.value = mat8
+            
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.3,
+                onComplete: () => {
+                    material.current.uMatcap2.value = material.current.uMatcap1.value
+                    material.current.uProgress.value = 1.0
+                }
+            })
+        })
+        
+        document.querySelector(`.titles`).addEventListener("mouseleave", () => {
+
+            material.current.uMatcap1.value = mat2
+            console.log("leaving the titles section");
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.3,
+                onComplete: () => {
+                    material.current.uMatcap2.value = material.current.uMatcap1.value
+                    material.current.uProgress.value = 1.0
+                }
+            })
+        })
+
+    }, [])
 
   return (
     <>

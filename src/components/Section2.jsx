@@ -1,19 +1,24 @@
 import React from 'react'
+import TitleBox from './UI/TitleBox'
 
 const Section2 = () => {
   return (
-     <section style={{position:'relative',zIndex:'-5'}} id="sec2" className=" min-h-screen bg-linear-to-t to-black/35 from-pink-600 table-column-grou  ">
-
-
-          <div className="container flex gap-15 w-full h-full ">
-            <div className="left w-1/2"></div> 
-            <div className="right h-full w-1/2 "> 
-                  <div className="flex items-center justify-end-safe  w-full  text-2xl text-white" > 
-                      <div> <p> why you should  </p> <p>  hire a walker ? </p>  </div>
-                  </div>
-            </div>
+    <section id="sec2 " className="   text-white  min-h-screen ">
+          <div className="images">
+            <img id='tomorrowland' src="/background-1015.png" alt="1015" />
+            <img id='navy-pier' src="/background-1016.png" alt="1016" />
+            <img id='msi-chicago' src="/background-1017.png" alt="1017" />
+            <img id='phone' src="/background-1018.png" alt="1018" />
           </div>
-        </section>
+           <div className='titles'>
+            <TitleBox title={'hire'} heading={'Hire a Walker'} link="/" /> 
+            <TitleBox title={'becomewalker'} heading={'Become a Walker'} link="/" /> 
+            <TitleBox title={'train'} heading={'Train Your Dog'} link="/" /> 
+            <TitleBox title={'petsitting'} heading={'Occasional Pet Sitting'} link="/" />
+            <TitleBox title={'browse'} heading={'Browse Available Walkers'} link="/" />
+            <TitleBox title={'become-Petsitter'} heading={'Become a Pet Sitter'} link="/" />
+            </div>
+    </section>
   )
 }
 
