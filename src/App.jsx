@@ -1,8 +1,8 @@
-import Model from "./components/model"
+
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import HomeLayout from "./layout/HomeLayout"
-import Home from "./pages/Home"
-import HomeLayour from "./layout/HomeLayout"
+import HomeLayout from "./layout/HomeLayout.jsx"
+import Home from "./pages/Home.jsx"
+
 
 function App() {
   

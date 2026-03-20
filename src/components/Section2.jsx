@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleBox from './UI/TitleBox'
+import TitleBox from './UI/TitleBox.jsx'
 
 const Section2 = () => {
   return (
